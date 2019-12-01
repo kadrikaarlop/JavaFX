@@ -50,7 +50,7 @@ public class PersonOverviewController {
         // Initialize the person table with the two columns.
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-
+        
         // Clear person details.
         showPersonDetails(null);
 
@@ -61,7 +61,7 @@ public class PersonOverviewController {
 
     /**
      * Is called by the main application to give a reference back to itself.
-     *
+     * 
      * @param mainApp
      */
     public void setMainApp(MainApp mainApp) {
@@ -70,11 +70,11 @@ public class PersonOverviewController {
         // Add observable list data to the table
         personTable.setItems(mainApp.getPersonData());
     }
-
+    
     /**
      * Fills all text fields to show details about the person.
      * If the specified person is null, all text fields are cleared.
-     *
+     * 
      * @param person the person or null
      */
     private void showPersonDetails(Person person) {
@@ -96,7 +96,7 @@ public class PersonOverviewController {
             birthdayLabel.setText("");
         }
     }
-
+    
     /**
      * Called when the user clicks on the delete button.
      */
@@ -112,11 +112,11 @@ public class PersonOverviewController {
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
             alert.setContentText("Please select a person in the table.");
-
+            
             alert.showAndWait();
         }
     }
-
+    
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new person.
@@ -150,7 +150,7 @@ public class PersonOverviewController {
             alert.setTitle("No Selection");
             alert.setHeaderText("No Person Selected");
             alert.setContentText("Please select a person in the table.");
-
+            
             alert.showAndWait();
         }
     }
